@@ -21,6 +21,7 @@ contract RewardToken is ERC20, ERC20Burnable, AccessControl {
 
 //The admin role for all roles is DEFAULT_ADMIN_ROLE, which means that only accounts with this role will be able to grant or revoke other roles
 //The DEFAULT_ADMIN_ROLE is also its own admin: it has permission to grant and revoke this role.
+    
     function mint(address to, uint256 amount) public{
         _mint(to, amount);
     }
