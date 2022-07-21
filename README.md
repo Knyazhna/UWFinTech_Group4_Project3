@@ -1,4 +1,5 @@
 # Project 3: Event Staking
+![](Resources/hero.png)
 In this project we will utilize smart contracts and minted tokens to create incentive for event attendance after an RSVP.
 *   [Sample Staking Repo](https://github.com/SRVng/solidity-avalanche-RSVP-staking-event)
 
@@ -39,7 +40,7 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 			ERC20Burnable: If an attendee already RSVPs for an event but needs to cancel before the start of the event, he can burn his token.
 
 			AccessControl: Contract module that restricts access to minting and user permissions. Only admin can mint or revoke permissions in case staff change.
-			
+
 	2. ERC721 token
 	3. RSVP
 	4. Main Contract
