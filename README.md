@@ -33,9 +33,13 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 ### Completion Checkpoints
 1. Create Contracts:
 	1. ERC20 (RWD) token
+
 		a. Use cases features:
+
 			ERC20Burnable: If an attendee already RSVPs for an event but needs to cancel before the start of the event, he can burn his token.
+
 			AccessControl: Contract module that restricts access to minting and user permissions. Only admin can mint or revoke permissions in case staff change.
+			
 	2. ERC721 token
 	3. RSVP
 	4. Main Contract
