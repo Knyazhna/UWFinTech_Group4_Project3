@@ -62,7 +62,7 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 | Name | GitHub | Linkedin | Email |
 | ---- | ------ | -------- | ----- |
 | Arthur Lovett | [ALovettII](https://github.com/ALovettII) | [LinkedIn](https://www.linkedin.com/in/arthurlovett/) | fintech@arthurlovett.com |
-| Maureen Kaaria | [MaureenKC](https://github.com/MaureenKC) |    | maureenkaaria@gmail.com |
+| Maureen Kaaria | [MaureenKC](https://github.com/MaureenKC) | [LinkedIn](https://www.linkedin.com/in/maureen-callahan/) | maureenkaaria@gmail.com |
 | Khaing Thwe | [Khaingz](https://github.com/Khaingz) |    | khaingzt88@gmail.com | 
 | Olga Koryachek | [Knyazhna](https://github.com/Knyazhna) | [LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true) | olgakoryachek@live.com | 
 | Marco Bertone | []() | []() |   |
