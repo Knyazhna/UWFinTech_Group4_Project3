@@ -19,9 +19,11 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 
 ## Technologies
 * Python
-* Brownie
+* Brownie 
+* Pandas
 * Solidity
 * Streamlit
+* web3
 
 
 ## Outline
