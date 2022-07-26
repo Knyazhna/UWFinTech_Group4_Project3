@@ -11,7 +11,7 @@ from web3 import Web3
 # Web 3 Connection
 ###################
 # Define and connect a new Web3 provider
-
+#w3 =
 
 ###########################
 # Streamlit Interface code.
@@ -33,3 +33,8 @@ with st.form(key="reg_event"):
     user_name = st.text_input("Enter your UserName")
 
     submitted = submit_button = st.form_submit_button(label="Submit Registration")
+
+# Payout reward token form & function
+st.sidebar.markdown("## Cash-In Rewards Here")
+with st.sidebar.form(key="cash_rewards"):
+    submitted = submit_button = st.form_submit_button(label="Reward! Thank you for attending")
