@@ -128,11 +128,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Apple computer info
-.DS_Store
 
+###############
 # Open Zeppelin
-###########
+###############
 *.swp
 *.swo
 
@@ -197,3 +196,29 @@ artifacts
 .certora*
 .last_confs
 certora_*
+
+###################
+# Brownie Ignore
+###################
+
+__pycache__
+*.swp
+.vscode
+.history
+.coverage
+.coverage.*
+build/
+coverage.xml
+dist/
+docs/_build
+venv*/
+env/
+*egg-info/
+.tox/
+.mypy_cache/
+.idea/
+.hypothesis/
+
+# Personnal
+.env
+c_pytest.py
