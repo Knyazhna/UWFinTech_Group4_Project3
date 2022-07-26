@@ -35,6 +35,12 @@ with st.form(key="reg_event"):
     submitted = submit_button = st.form_submit_button(label="Submit Registration")
 
 # Payout reward token form & function
-st.sidebar.markdown("## Cash-In Rewards Here")
-with st.sidebar.form(key="cash_rewards"):
-    submitted = submit_button = st.form_submit_button(label="Reward! Thank you for attending")
+st.sidebar.markdown("## Collect Reward Here")
+with st.sidebar.form(key="token_rewards"):
+    submitted = submit_button = st.form_submit_button(label="Reward! Thank you for attending!")
+
+# Cancel RSVP before event date
+with st.sidebar.form(key="burn_token"):
+    st.markdown('### Cancel RSVP')
+    amount = st.number_input("Enter RSVP To Withdraw:", step=1)
+    submitted = submit_button = st.form_submit_button(label='Withdraw registration')
