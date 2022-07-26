@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.1;
 
 //  Import the following contracts from the OpenZeppelin library:
 //    * `SafeMath` is a solidity math library especially designed to support safe math operations: safe means that it prevents overflow when working with uint.
