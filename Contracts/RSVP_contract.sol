@@ -3,7 +3,7 @@ pragma solidity  ^0.5.0;
 
 // imports go here ~
 import './RewardToken.sol';
-import './Stakingcontract';
+import './Stakingcontract.sol';
 import './Nft721.sol';
 // security contract import?;
 
