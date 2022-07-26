@@ -1,7 +1,7 @@
 # Project 3: Event Staking
 ![](Resources/hero.png)
 In this project we will utilize smart contracts and minted tokens to create incentive for event attendance after an RSVP.
-*   [Sample Staking Repo](https://github.com/SRVng/solidity-avalanche-RSVP-staking-event)
+
 
 ## Problem Statement:
 In this post-COVID era, attempting to arrange events both virtually and in-person, has become an increasingly daunting task. 
@@ -27,7 +27,6 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 
 
 ## Outline
-
 ### High-Level: NFT Staking System
 1.  An ERC721 will be the NFT (RSVP) token, used to identify owner.
 2.  An ERC20 token will be the reward token.
@@ -46,13 +45,12 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 	2. ERC721 token
 	3. RSVP
 	4. Main Contract
-	5. Security Contract?
+	5. Security Contract
 2. Integrate front-end platform with Streamlit
-3. Test?
+3. Test
 4. Summarize into Powerpoint
 5. Present
-6. Celebration
-
+6. Celebrate
 
 ## Installation Instructions
 
