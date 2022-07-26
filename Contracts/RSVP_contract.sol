@@ -1,5 +1,6 @@
-// SPDX-License-Identifier: SEE LICENSE IN LICENSE
-pragma solidity  ^0.5.0;
+// SPDX-License-Identifier: MIT
+
+pragma solidity  ^0.8.1;
 
 // imports go here ~
 import './RewardToken.sol';
