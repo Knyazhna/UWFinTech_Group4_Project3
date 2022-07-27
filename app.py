@@ -27,20 +27,19 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 @st.cache(allow_output_mutation=True)
 def load_contract():
 
-    # Load RSVP Contract ABI
-   with open(Path("./Contracts/JSON/rsvpEventABI.json")) as f:
-       rsvp_abi = json.load(f)
+    # Load reward
+   with open(Path("./contracts/compiled/reward_abi.json")) as f:
+       import_abi = json.load(f)
 
    # Set the contract address (this is the address of the deployed contract)
    contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
 
    # Get the contract
    contract = w3.eth.contract(
-       address = contract_address,
-       abi = rsvp_abi
+       address=contract_address,
+       abi=import_abi
    )
    # Return the contract from the function
-   
    return contract
 
 # Load the contract
@@ -74,33 +73,33 @@ st.markdown("## Register for an Event")
 # User Functions
 ###########################
 
-# Create form for registering for events
-with st.form(key="reg_event"):
-    st.markdown("### Register for upcoming event here!")
-    user_address = st.text_input("Enter your public address")
-    user_name = st.text_input("Enter your UserName")
-    # user_event_selection = st.selectbox('Choose YOUR event:', [Event_1, Event_2, Event_3, Event_4])
-    user_purchase = st.number_input("RSVP Amount (In WEI)", min_value =0, value=0, step=1)
-    submitted = submit_button = st.form_submit_button(label="Submit Registration")
+# # Create form for registering for events
+# with st.form(key="reg_event"):
+#     st.markdown("### Register for upcoming event here!")
+#     user_address = st.text_input("Enter your public address")
+#     user_name = st.text_input("Enter your UserName")
+#     # user_event_selection = st.selectbox('Choose YOUR event:', [Event_1, Event_2, Event_3, Event_4])
+#     user_purchase = st.number_input("RSVP Amount (In WEI)", min_value =0, value=0, step=1)
+#     submitted = submit_button = st.form_submit_button(label="Submit Registration")
 
-# Payout reward token form & function
-st.sidebar.markdown("## Collect Reward Here")
-with st.sidebar.form(key="token_rewards"):
-    submitted = submit_button = st.form_submit_button(label="Reward! Thank you for attending!")
+# # Payout reward token form & function
+# st.sidebar.markdown("## Collect Reward Here")
+# with st.sidebar.form(key="token_rewards"):
+#     submitted = submit_button = st.form_submit_button(label="Reward! Thank you for attending!")
 
-# Cancel RSVP before event date
-with st.sidebar.form(key="burn_token"):
-    st.markdown('### Cancel RSVP')
-    amount = st.number_input("Enter RSVP To Withdraw:", step=1)
-    submitted = submit_button = st.form_submit_button(label='Withdraw registration')
+# # Cancel RSVP before event date
+# with st.sidebar.form(key="burn_token"):
+#     st.markdown('### Cancel RSVP')
+#     amount = st.number_input("Enter RSVP To Withdraw:", step=1)
+#     submitted = submit_button = st.form_submit_button(label='Withdraw registration')
 
 
-###########################
-# Admin Functions
-###########################
-admin_account = os.getenv("ADMIN_PUBLIC_KEY")
+# ###########################
+# # Admin Functions
+# ###########################
+# admin_account = os.getenv("ADMIN_PUBLIC_KEY")
 
-st.sidebar.markdown("## Administrator Functions")
-with st.sidebar.form(key="add_event"):
-    st.markdown("### Add New Event")
-    submitted = submit_button = st.form_submit_button(label= "Event registered")
+# st.sidebar.markdown("## Administrator Functions")
+# with st.sidebar.form(key="add_event"):
+#     st.markdown("### Add New Event")
+#     submitted = submit_button = st.form_submit_button(label= "Event registered")
