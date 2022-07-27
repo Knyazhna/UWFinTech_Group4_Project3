@@ -71,6 +71,7 @@ with st.form(key="reg_event"):
     user_address = st.text_input("Enter your public address")
     user_name = st.text_input("Enter your UserName")
     user_event_selection = st.selectbox('Choose YOUR event:', [Event_1, Event_2, Event_3, Event_4])
+    user_purchase = st.number_input("RSVP Amount (In WEI)", min_value =0, value=0, step=1)
     submitted = submit_button = st.form_submit_button(label="Submit Registration")
 
 # Payout reward token form & function
