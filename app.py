@@ -9,30 +9,39 @@ import json
 from dotenv import load_dotenv
 from web3 import Web3
 
+# Load .env for URI & Cotract Address
+load_dotenv()
+
+
 ####################
 # Web 3 Connection
 ###################
 # Define and connect a new Web3 provider
-#w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
+w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
+
+################################################################################
+# Contract Helper function:
+################################################################################
 
 # Define the load_contract function
-#@st.cache(allow_output_mutation=True)
-#def load_contract():
+@st.cache(allow_output_mutation=True)
+def load_contract():
 
     # Load RSVP Contract ABI
-#    with open(Path("./Contracts/rsvpEventABI.json")) as f:
-#        rsvp_abi = json.load(f)
+   with open(Path("./Contracts/JSON/rsvpEventABI.json")) as f:
+       rsvp_abi = json.load(f)
 
-    # Set the contract address (this is the address of the deployed contract)
-#    contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
 
-    # Get the contract
-#    contract = w3.eth.contract(
-#        address = contract_address,
-#        abi = rsvp_abi
-#    )
-    # Return the contract from the function
-#    return contract
+   # Get the contract
+   contract = w3.eth.contract(
+       address = contract_address,
+       abi = rsvp_abi
+   )
+   # Return the contract from the function
+   
+   return contract
 
 # Load the contract
 #contract = load_contract()
@@ -42,14 +51,14 @@ from web3 import Web3
 ######################
 
 # Import upcoming_events.csv
-upcoming_events = pd.read_csv(Path("Resources/Upcoming_events.csv"))
-upcoming_events = upcoming_events.drop(columns="Unnamed: 0")
+# upcoming_events = pd.read_csv(Path("Resources/Upcoming_events.csv"))
+# upcoming_events = upcoming_events.drop(columns="Unnamed: 0")
 
-# Create events in CSV as individual variables.
-Event_1 = f"{upcoming_events.iloc[0,0]}"
-Event_2 = f"{upcoming_events.iloc[0,1]}"
-Event_3 = f"{upcoming_events.iloc[0,3]}"
-Event_4 = f"{upcoming_events.iloc[0,4]}"
+# # Create events in CSV as individual variables.
+# Event_1 = f"{upcoming_events.iloc[0,0]}"
+# Event_2 = f"{upcoming_events.iloc[0,1]}"
+# Event_3 = f"{upcoming_events.iloc[0,3]}"
+# Event_4 = f"{upcoming_events.iloc[0,4]}"
 
 
 ###########################
