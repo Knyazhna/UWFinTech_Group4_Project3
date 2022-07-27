@@ -1,9 +1,9 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.9.0;
 
-import './RSVP_Event.sol';
+import './rsvpEventME.sol';
 import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
-import './RewardToken.sol';
+import './rewardTokenME.sol';
 import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
 contract Staking {

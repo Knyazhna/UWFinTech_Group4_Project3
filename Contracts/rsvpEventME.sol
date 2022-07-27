@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.1;
 
-import './RewardToken.sol';
-import './EventSafe.sol';
-import './Staking.sol';
-import './Nft721.sol';
+import './rewardTokenME.sol';
+import './eventSafeME.sol';
+import './stakingME.sol';
+import './Nft721ME.sol';
 
 // Idea : Event Staking (Challenge from https://ethhole.com/challenge)
 // Write a program that lets people pay a small amount, RSVP for an event, and if they don’t show up then everyone who did shares in the reward. 
