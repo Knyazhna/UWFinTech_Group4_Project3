@@ -1,5 +1,14 @@
->>> from web3 import Web3
->>> from solcx import compile_source
+from web3 import Web3
+from solcx import compile_source
+
+import os
+import json
+from dotenv import load_dotenv
+from web3 import Web3
+from web3 import EthereumTesterProvider
+
+# Load .env for URI & Cotract Address
+load_dotenv()
 
 """
 Establishing W3
@@ -12,34 +21,43 @@ Load accounts
         owner
     Deploy the rest
 """
+# @ TODO:
+# 1. Add file path
+# 2. Add place for tx storage
+#       - Maybe ABI/Bin?
+# 3. Hardcode / Pass w3
 
 
-# Solidity source code
->>> compiled_sol = compile_source( # Read function
-...     '''
-...     pragma solidity >0.5.0;
-...
-...     contract Greeter {
-...         string public greeting;
-...
-...         constructor() public {
-...             greeting = 'Hello';
-...         }
-...
-...         function setGreeting(string memory _greeting) public {
-...             greeting = _greeting;
-...         }
-...
-...         function greet() view public returns (string memory) {
-...             return greeting;
-...         }
-...     }
-...     ''',
-...     output_values=['abi', 'bin']
-... )
+# Solidity source code 
+def compile_source_file(file_path):
+    with open(file_path, 'r') as f:
+        source = f.read()
+
+    return compile_source(source)
+    #      output_values=['abi', 'bin']
+
+
+# Adding function to deploy the compiled Solidity files
+def deploy_contract(w3, contract_interface):
+    tx_hash = w3.eth.contract(
+        abi=contract_interface['abi'],
+        bytecode=contract_interface['bin']).constructor().transact()
+
+    address = w3.eth.get_transaction_receipt(tx_hash)['contractAddress']
+    return address
+
+# Initializing w3 connection
+w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
+
+
+
+
+
+
+
 
 # retrieve the contract interface
->>> contract_id, contract_interface = compiled_sol.popitem()
+contract_id, contract_interface = compiled_sol.popitem()
 
 # get bytecode / bin
 >>> bytecode = contract_interface['bin']
