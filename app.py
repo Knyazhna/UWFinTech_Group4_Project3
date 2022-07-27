@@ -20,7 +20,7 @@ from web3 import Web3
 #def load_contract():
 
     # Load RSVP Contract ABI
-#    with open(Path("./contracts/compiled/RSVP_contract_abi.json")) as f:
+#    with open(Path("./Contracts/rsvpEventABI.json")) as f:
 #        rsvp_abi = json.load(f)
 
     # Set the contract address (this is the address of the deployed contract)
