@@ -1,6 +1,7 @@
 from web3 import Web3
 from solcx import compile_source
 
+import sys
 import os
 import json
 from dotenv import load_dotenv
@@ -29,8 +30,8 @@ Load accounts
 
 
 # Solidity source code 
-def compile_source_file(file_path):
-    with open(file_path, 'r') as f:
+def compile_source_file(contract):
+    with open("./contracts/" + contract + '.sol') as f:
         source = f.read()
 
     return compile_source(source)
@@ -46,15 +47,52 @@ def deploy_contract(w3, contract_interface):
     address = w3.eth.get_transaction_receipt(tx_hash)['contractAddress']
     return address
 
+
 # Initializing w3 connection
 w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 
 
+# Adding contract list to generate filepaths
+contractList = ['eventSafeME', 'Nft721ME', 'rewardTokenME', 'rsvpEventME', 'stakingME']
+abiList = []
+ 
+
+## TODO: Define fn
+
+ # Recursive loading function
+for contract in range(len(contractList)):
+    # Compile source file
+    compiled_sol = compile_source_file(contract)
+
+    # Fetch contract interface and ID
+    contract_id, contract_interface = compiled_sol.popitem()
+
+    # Deploy contract
+    address = deploy_contract(w3, contract_interface)
+
+
+    print(f'Deployed {contract_id} to: {address}\n')
+    
+## contract id = bin
+# contract name address, abi, contract_interface
 
 
 
 
 
+def fetch_abi():
+
+    contractList = [EVT_Token, CreatorERC721, RSVP_Event]
+    contractAbiList = ['tokenAbi', 'nftAbi', 'rsvpAbi']
+
+
+    struct = {
+        "CONTRACT_ADDRESS": str(contract[i][-1]),
+        "CONTRACT_ABI": contracts[i][-1].abi
+    }
+
+    with open(("./contracts/compiled/" + contractAbiList[i] + '.json'), 'w', encoding='utf-8') as f:
+        json.dump(struct, f, indent=3)
 
 # retrieve the contract interface
 contract_id, contract_interface = compiled_sol.popitem()
