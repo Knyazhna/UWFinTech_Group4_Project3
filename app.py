@@ -8,6 +8,7 @@ import os
 import json
 from dotenv import load_dotenv
 from web3 import Web3
+from web3 import EthereumTesterProvider
 
 # Load .env for URI & Cotract Address
 load_dotenv()
@@ -22,6 +23,13 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 ################################################################################
 # Contract Helper function:
 ################################################################################
+# Import Deploy
+    # Initiate Accounts: keys / addresses
+    # Transaction details/receipts
+
+
+
+
 
 # Define the load_contract function
 @st.cache(allow_output_mutation=True)
@@ -45,6 +53,7 @@ def load_contract():
 # Load the contract
 contract = load_contract()
 
+
 #######################
 # Python Module Import
 ######################
@@ -58,6 +67,20 @@ contract = load_contract()
 # Event_2 = f"{upcoming_events.iloc[0,1]}"
 # Event_3 = f"{upcoming_events.iloc[0,3]}"
 # Event_4 = f"{upcoming_events.iloc[0,4]}"
+
+## Two Button:
+# Create event
+    # Mint NFT 721
+    # Ask event details
+        # Event Name
+        # End time 
+        # Stake
+        
+# RSVP
+    # Ask which event:
+        # Mint 720
+
+
 
 
 ###########################
