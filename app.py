@@ -70,13 +70,25 @@ contract = load_contract()
 
 # Cover Image & Titles
 st.image("Resources/hero.png")
-st.title("Welcome to the G4 Event Staking Platform!")
+st.title("G4 Event Staking Platform!")
 st.markdown("## Register or Create an Event")
 
 
 # Event Button
 with st.sidebar:
-    st.button
+    st.header('What would you like to do?')
+    if st.button("Create Event"):
+        # event_name, time_end, _stake
+        event_name = st.text_input('Event Name')
+        creator = st.text_input('ETH Wallet Address')
+        time_end = st.text_input("Event Length (sec)")
+
+    if st.button("RSVP"):
+        # event_name, time_end, _stake
+        depositor = st.text_input('ETH Wallet Address')
+
+    
+    #st.button("RSVP for an Event")
 
 
 
