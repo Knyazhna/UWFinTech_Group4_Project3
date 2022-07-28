@@ -26,7 +26,7 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 
 
 # Define the load_contract function
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, hash_funcs={'_json.Scanner': lambda _: None})
 def load_reward():
 
     # Load reward
@@ -49,7 +49,7 @@ reward_instance = load_reward()
 
 
 # Load NFT
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, hash_funcs={'_json.Scanner': lambda _: None})
 def load_NFT():
 
     # Load reward
@@ -72,7 +72,7 @@ nft721_instance = load_NFT()
 
 
 # Load RSVP
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, hash_funcs={'_json.Scanner': lambda _: None})
 def load_RSVP():
 
     # Load reward
@@ -95,7 +95,7 @@ rsvp_instance = load_RSVP()
 
 
 # Load Staking
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, hash_funcs={'_json.Scanner': lambda _: None})
 def load_staking():
 
     # Load reward
@@ -118,7 +118,7 @@ staking_instance = load_staking()
 
 
 # Load Safe
-@st.cache(allow_output_mutation=True)
+@st.cache(allow_output_mutation=True, hash_funcs={'_json.Scanner': lambda _: None})
 def load_safe():
 
     # Load reward
@@ -184,7 +184,8 @@ with st.sidebar:
             if submitted:
                 rsvp_instance.RSVP_Create(event_name, time_end, _stake)
         
-        st.write("Event Created")
+        if submitted:
+            st.write("Event Created")
 #transaction_hash = send_transaction(w3, creator, art_address)#
 # ADD NFT FUNCT
 # st.text("NFT Transferred to your address")
