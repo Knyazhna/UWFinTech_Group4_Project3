@@ -1,3 +1,4 @@
+# Imports
 from web3 import Web3
 from solcx import compile_source
 
@@ -8,7 +9,7 @@ from dotenv import load_dotenv
 from web3 import Web3
 from web3 import EthereumTesterProvider
 
-# Load .env for URI & Cotract Address
+# Load .env for URI & Contract Address
 load_dotenv()
 
 """
@@ -22,11 +23,13 @@ Load accounts
         owner
     Deploy the rest
 """
-# @ TODO:
-# 1. Add file path
-# 2. Add place for tx storage
-#       - Maybe ABI/Bin?
-# 3. Hardcode / Pass w3
+
+# TODO:
+# Add aacounts
+# Add main
+# Maybe seperate
+# Add buttons
+# Need to set parameters for a few 
 
 
 # Solidity source code 
@@ -46,7 +49,6 @@ def deploy_contract(w3, contract_interface):
 
     address = w3.eth.get_transaction_receipt(tx_hash)['contractAddress']
     return address
-
 
 
 # Initializing w3 connection
