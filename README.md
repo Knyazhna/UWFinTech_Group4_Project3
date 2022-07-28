@@ -31,33 +31,18 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 ### High-Level: NFT Staking System
 1.  An ERC721 will be the NFT (RSVP) token, used to identify owner.
 2.  An ERC20 token will be the reward token.
-3.  The staking contract will hold the staked nft and will allow claiming the rewards.
-
-### Completion Checkpoints
-1. Create Contracts:
-	1. ERC20 (RWD) token
-
-		a. Use cases features:
-
-			ERC20Burnable: If an attendee already RSVPs for an event but needs to cancel before the start of the event, he can burn his token.
-
-			AccessControl: Contract module that restricts access to minting and user permissions. Only admin can mint or revoke permissions in case staff change.
-
-	2. ERC721 token
-	3. RSVP
-	4. Main Contract
-	5. Security Contract
-2. Integrate front-end platform with Streamlit
-3. Test
-4. Summarize into Powerpoint
-5. Present
-6. Celebrate
+3.	The eventsafe contract will add extra security and keep track of tokens created.
+4.  The staking contract will hold the staked nft and will allow claiming the rewards.
+5.	The reward RSVP contract will be where the front end pulls from for admins
 
 ## Installation Instructions
+To test on remix you need to compile and deploy the nft, reward token, and event owner address and input those parameters to create an RSVP event.  From there input whatever other variables needed for the function you want to accomplish.
 
+## Usage 
+Concerts, casinos, digital assets; any venue that could benefit from a secure incentivized attendence system that you can think of.
 
-## Usage
-
+## Future Potential (& WIP)
+Currently this has very exciting future potentials, especially in the post-Covid landscape.  There's a lot that can be added to this such as hosting it on a server that connects directly to our deployer.py and can execute the actions directly, while having the functionality of an actual webpage environment.  The folder "HTML server WIP" has a lot of the HTML that we worked on, but unfortunately ran into issues integrating with solcx.  This is the part that I believe warrants revisiting this project at a later date.
 
 ## Contributors
 | Name | GitHub | Linkedin | Email |
@@ -66,5 +51,5 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 | Maureen Kaaria | [MaureenKC](https://github.com/MaureenKC) | [LinkedIn](https://www.linkedin.com/in/maureen-callahan/) | maureenkaaria@gmail.com |
 | Khaing Thwe | [Khaingz](https://github.com/Khaingz) |    | khaingzt88@gmail.com | 
 | Olga Koryachek | [Knyazhna](https://github.com/Knyazhna) | [LinkedIn](https://www.linkedin.com/in/olga-koryachek-a74b1877/?msgOverlay=true) | olgakoryachek@live.com | 
-| Marco Bertone | []() | []() |   |
+| Marco Bertone | [marcoberton](https://github.com/marcoberton) | marc.obertone@outlook.com  |
 
