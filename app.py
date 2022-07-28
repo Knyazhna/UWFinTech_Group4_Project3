@@ -24,6 +24,98 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 # Contract Helper function:
 ################################################################################
 
+contractList = ['rewardTokenME', 'Nft721ME', 'eventSafeME', 'rsvpEventME', 'stakingME']
+abiList = ['safeAbi', 'nft721Abi', 'rewardAbi','rsvpAbi']
+
+# Define the load_contract function
+@st.cache(allow_output_mutation=True)
+def load_contract():
+
+    # Load reward
+   with open(Path("./contracts/compiled/reward_abi.json")) as f:
+       import_abi = json.load(f)
+
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+   # Get the contract
+   contract = w3.eth.contract(
+       address=contract_address,
+       abi=import_abi
+   )
+   # Return the contract from the function
+   return contract
+
+# Load the contract
+reward = load_contract()
+
+# Load NFT
+@st.cache(allow_output_mutation=True)
+def load_NFT():
+
+    # Load reward
+   with open(Path("./contracts/compiled/NFT721.json")) as f:
+       import_abi = json.load(f)
+
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+   # Get the contract
+   contract = w3.eth.contract(
+       address=contract_address,
+       abi=import_abi
+   )
+   # Return the contract from the function
+   return contract
+
+# Load the contract
+load_NFT = load_contract()
+
+
+# Load RSVP
+@st.cache(allow_output_mutation=True)
+def load_RSVP():
+
+    # Load reward
+   with open(Path("./contracts/compiled/rsvp_abi.json")) as f:
+       import_abi = json.load(f)
+
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+   # Get the contract
+   contract = w3.eth.contract(
+       address=contract_address,
+       abi=import_abi
+   )
+   # Return the contract from the function
+   return contract
+
+# Load the contract
+load_RSVP = load_contract()
+
+
+# Load Staking
+@st.cache(allow_output_mutation=True)
+def load_staking():
+
+    # Load reward
+   with open(Path("./contracts/compiled/reward_abi.json")) as f:
+       import_abi = json.load(f)
+
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+   # Get the contract
+   contract = w3.eth.contract(
+       address=contract_address,
+       abi=import_abi
+   )
+   # Return the contract from the function
+   return contract
+
+# Load the contract
+contract = load_contract()
 # Define the load_contract function
 @st.cache(allow_output_mutation=True)
 def load_contract():
@@ -45,6 +137,30 @@ def load_contract():
 
 # Load the contract
 contract = load_contract()
+
+
+# Define the load_contract function
+@st.cache(allow_output_mutation=True)
+def load_contract():
+
+    # Load reward
+   with open(Path("./contracts/compiled/reward_abi.json")) as f:
+       import_abi = json.load(f)
+
+   # Set the contract address (this is the address of the deployed contract)
+   contract_address = os.getenv("SMART_CONTRACT_ADDRESS")
+
+   # Get the contract
+   contract = w3.eth.contract(
+       address=contract_address,
+       abi=import_abi
+   )
+   # Return the contract from the function
+   return contract
+
+# Load the contract
+contract = load_contract()
+
 
 ####################
 # Streamlit Layout #
@@ -70,7 +186,7 @@ contract = load_contract()
 
 # Cover Image & Titles
 st.image("Resources/hero.png")
-st.title("G4 Event Staking Platform!")
+st.title("G4 Event Staking Platform")
 st.markdown("## Register or Create an Event")
 
 
@@ -78,10 +194,16 @@ st.markdown("## Register or Create an Event")
 with st.sidebar:
     st.header('What would you like to do?')
     if st.button("Create Event"):
-        # event_name, time_end, _stake
+        # Setting details
         event_name = st.text_input('Event Name')
         creator = st.text_input('ETH Wallet Address')
         time_end = st.text_input("Event Length (sec)")
+        
+        if st.button('Create Your Event'):
+            transaction_hash = send_transaction(w3, creator, art_address, purchase_price) 
+
+        # Adding event functionality
+
 
     if st.button("RSVP"):
         # event_name, time_end, _stake
