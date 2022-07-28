@@ -10,6 +10,8 @@ contract Nft721 is ERC721, Ownable {
     using SafeMath for uint256;
     using Counters for Counters.Counter;
 
+// Use counters to keep track of tokens given during the event.
+
     Counters.Counter private _tokenIds;
 
     uint public constant MAX_SUPPLY = 1;

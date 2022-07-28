@@ -9,7 +9,7 @@ contract EventSafe {
     //Mapping
     mapping(address => bool) depositor;
     
-    //Function
+    //Function to make sure attendees have paid their stake
     function deposit() internal returns(uint256 collateral) {
         require(depositor[msg.sender] == true, "Error: 1");
         bool currency_check = false;
@@ -24,7 +24,7 @@ contract EventSafe {
         
         return address(this).balance;
     }
-    
+    // extra security ensuring they are paying from the right wallet
     function return_collateral(address payable wallet) internal {
         require(wallet == msg.sender, "You cannot withdraw others wallet");
         wallet.transfer(fee);

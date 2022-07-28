@@ -6,7 +6,8 @@ import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 import './rewardTokenME.sol';
 import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 
-contract Staking {
+// Use abstract contract 
+abstract contract Staking {
     using SafeMath for uint256;
     
     //State Variables
@@ -59,7 +60,7 @@ contract Staking {
     function addWhitelist(address _stakeholder) private {
        (bool _Whitelist, ) = Whitelist_Check(_stakeholder);
         if(_Whitelist == false) isStaking.push(_stakeholder);
-        emit LogWhitelist(_stakeholder,"Given address is now staking");
+        emit LogWhitelist(_stakeholder,"Your address is now staking!");
     }
     
     function removeWhitelist(address _stakeholder) private {
