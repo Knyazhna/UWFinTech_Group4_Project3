@@ -1,7 +1,5 @@
 * {
     font-family: 'Roboto Condensed';
-    background-color: white;
-    overflow: hidden;
     color: #4e4e4e;
 }
 
@@ -11,6 +9,8 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
     overflow: auto;
     background-color: #008CBA;
 }
@@ -36,14 +36,17 @@ h1 {
 .horizontal-line {
     height: 2px;
     width: 100%;
-    background-color: #4e4e4e;
+    /* background-color: #4e4e4e; */
+    background-color: #00000060;
 }
 
 .menu {
-    /* padding: 16px; */
     margin: auto;
     border-radius: 3px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-color: white;
+    overflow: hidden;
 }
 
 .menu_wrapper {
@@ -55,7 +58,7 @@ h1 {
 }
 
 .menu_side {
-    padding: 0 8px;
+    overflow: visible;
 }
 
 button {
@@ -71,10 +74,24 @@ button {
     cursor: pointer;
 }
 
+
+button:hover {
+    background-color: #00000011;
+}
+button:active {
+    background-color: #00000030;
+}
+
 .button_primary {
     padding: 8px 16px;
     background-color: #008CBA;
     color: white;
+}
+.button_primary:hover {
+    background-color: #007ea8;
+}
+.button_primary:active {
+    background-color: #006e92;
 }
 
 .button_side {
@@ -84,5 +101,15 @@ button {
 }
 
 img {
-    padding: 32px;
+    padding: 16px;
+}
+
+.response {
+}
+
+.response .text {
+    padding: 16px;
+    width: fit-content;
+    margin: auto;
+    font-size: 24px;
 }

@@ -2,36 +2,49 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css"> <!-- Importing styles to make things look good -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>  <!-- Importing a font -->
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
 </head>
 
 <body>
 
-    <div class="menu column"> 
+    <div class="menu column">
         <h1>RSVP Staking</h1>
         <!-- <p>This is a paragraph.</p> -->
 
         <div class="horizontal-line"></div>
-        
-        <div class="menu_wrapper row">
-            <div class="menu_side column"> <!-- Column of buttons -->
 
-                <button class="button_side">Reward check</button>
-                <button class="button_side">Total unclaimed reward</button>
-                <button class="button_side">Withdraw award</button>
+        <div class="menu_wrapper row">
+
+            <div class="menu_side column">
+                <button onclick="request('reward_check')" class="button_side">Reward check</button>
+                <button onclick="request('total_unclaimed_rewards')" class="button_side">Total unclaimed reward</button>
+                <button onclick="request('withdraw_award')" class="button_side">Withdraw award</button>
             </div>
+
             <div class="menu_main column">
 
-                <div class="row auto-margin">  <!-- Row of buttons -->
-                    <button class="button_primary">RSVP Create</button>
-                    <button>Check-in</button>
-
+                <div class="row auto-margin">
+                    <input id="createRsvpReward" type="text" placeholder="Reward">
+                    <input id="createRsvpNFT" type="text" placeholder="NFT">
+                    <input id="createRsvpOwner" type="text" placeholder="Owner">
                 </div>
-                <div class="row auto-margin">  <!-- Image -->
+                <div class="row auto-margin">
+                    <button onclick="request('create_rsvp')" class="button_primary">Create RSVP</button>
+                    <button onclick="request('check_in')">Check-in</button>
+                </div>
+
+                <div class="row auto-margin">
                     <img src="solidity.png" alt="solidity">
                 </div>
+
             </div>
+        </div>
+
+        <div id="response" class="response column">
+            <div class="horizontal-line"></div>
+            <div id="responseText" class="text">&nbsp;</div>
         </div>
     </div>
 
