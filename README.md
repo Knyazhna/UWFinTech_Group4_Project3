@@ -44,6 +44,14 @@ Concerts, casinos, digital assets; any venue that could benefit from a secure in
 ## Future Potential (& WIP)
 Currently this has very exciting future potentials, especially in the post-Covid landscape.  There's a lot that can be added to this such as hosting it on a server that connects directly to our deployer.py and can execute the actions directly, while having the functionality of an actual webpage environment.  The folder "HTML server WIP" has a lot of the HTML that we worked on, but unfortunately ran into issues integrating with solcx.  This is the part that I believe warrants revisiting this project at a later date.
 
+## App Video
+
+
+https://user-images.githubusercontent.com/97809855/181617159-2313cc74-18b3-448c-8ed8-8e31c91c67b3.mov
+
+
+
+
 ## Contributors
 | Name | GitHub | Linkedin | Email |
 | ---- | ------ | -------- | ----- |
