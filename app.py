@@ -9,10 +9,10 @@ import json
 from dotenv import load_dotenv
 from web3 import Web3
 from web3 import EthereumTesterProvider
+# import deployer
 
 # Load .env for URI & Cotract Address
 load_dotenv()
-
 
 ####################
 # Web 3 Connection
@@ -23,10 +23,6 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 ################################################################################
 # Contract Helper function:
 ################################################################################
-# Import Deploy
-    # Initiate Accounts: keys / addresses
-    # Transaction details/receipts
-
 
 # Define the load_contract function
 @st.cache(allow_output_mutation=True)
@@ -53,17 +49,35 @@ contract = load_contract()
 ####################
 # Streamlit Layout #
 ####################
-## Two Button:
+## Two Button: - sidbar
 # Create event
-    # Mint NFT 721
+    # Mint NFT 721 - needs account
     # Ask event details
         # Event Name
         # End time 
-        # Stake
-        
+        # Stake     
 # RSVP
     # Ask which event:
         # Mint 720
+        # Stake 
+        # Check balance
+        # Provide user pool access 
+        # Cancellation
+
+###########################
+# Streamlit Interface code.
+###########################
+
+# Cover Image & Titles
+st.image("Resources/hero.png")
+st.title("Welcome to the G4 Event Staking Platform!")
+st.markdown("## Register or Create an Event")
+
+
+# Event Button
+with st.sidebar:
+    st.button
+
 
 
 #######################
@@ -85,14 +99,7 @@ contract = load_contract()
 
 
 
-###########################
-# Streamlit Interface code.
-###########################
 
-# Cover Image & Titles
-st.image("Resources/hero.png")
-st.title("Project 4: Event Staking")
-st.markdown("## Register for an Event")
 
 ###########################
 # User Functions

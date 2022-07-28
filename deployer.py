@@ -12,24 +12,6 @@ from web3 import EthereumTesterProvider
 # Load .env for URI & Contract Address
 load_dotenv()
 
-"""
-Establishing W3
-Load accounts
-    Reward Token
-    NFT721
-    RSVP
-        address1
-        address2
-        owner
-    Deploy the rest
-"""
-
-# TODO:
-# Add aacounts
-# Add main
-# Maybe seperate
-# Add buttons
-# Need to set parameters for a few 
 
 
 # Solidity source code 
@@ -56,23 +38,24 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 
 
 # Adding contract list to generate filepaths
-contractList = ['eventSafeME', 'Nft721ME', 'rewardTokenME', 'rsvpEventME', 'stakingME']
+contractList = ['rewardTokenME', 'Nft721ME', 'eventSafeME', 'rsvpEventME', 'stakingME']
 abiList = ['safeAbi', 'nft721Abi', 'rewardAbi','rsvpAbi']
 
-def deploy(contractList, abiList):
+def contract_deploy(contractList, abiList):
     # Initializing list
     interfaceList = []
 
     # Recursive loading function
     for contract in range(len(contractList)):
+
+        # TODO: Create if statement to check for parameters
+        
+
         # Compile source file
         compiled_sol = compile_source_file(contract)
 
         # Fetch contract interface and ID
         contract_id, contract_interface = compiled_sol.popitem()
-
-        # bytecode = contract_interface['bin']
-        # abi = contract_interface['abi']
 
         # Deploy contract
         address = deploy_contract(w3, contract_interface)
@@ -95,9 +78,56 @@ def deploy(contractList, abiList):
         # gas_estimate = store_var_contract.functions.setVar(255).estimate_gas()
         # print(f'Gas estimate to transact with setVar: {gas_estimate}')
 
-        return interfaceList
+    return interfaceList
+
+# def account_load(interface):# # set pre-funded account as sender
+#     w3.eth.default_account = w3.eth.accounts[0]
+#     Greeter = w3.eth.contract(abi=abi, bytecode=bytecode)
+#     # # Submit the transaction that deploys the contract
+#     tx_hash = Greeter.constructor().transact()
+
+#     # # Wait for the transaction to be mined, and get the transaction receipt
+#     tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 
 
+def main():
+    interfaceList = contract_deploy(contractList, abiList)
+    
+    accounts = account_load(interfaceList)
+
+
+    
+
+if __name__== "__main__":
+    main()
+
+
+"""
+Establishing W3
+Load accounts
+    Reward Token
+    NFT721
+    RSVP
+        address1
+        address2
+        owner
+    Deploy the rest
+"""
+
+# TODO:
+# Add aacounts
+# Add main
+# Maybe seperate
+# Add buttons
+# Need to set parameters for a few 
+# maybe make dictionary
+# Ensure deployment order
+# If else statement for parameters
+
+
+
+# bytecode = contract_interface['bin']
+# abi = contract_interface['abi']
 
 # def fetch_abi():
 
@@ -114,26 +144,3 @@ def deploy(contractList, abiList):
 #             json.dump(struct, f, indent=3)
 
 
-# # set pre-funded account as sender
-# >>> w3.eth.default_account = w3.eth.accounts[0]
-
-# >>> Greeter = w3.eth.contract(abi=abi, bytecode=bytecode)
-
-# # Submit the transaction that deploys the contract
-# >>> tx_hash = Greeter.constructor().transact()
-
-# # Wait for the transaction to be mined, and get the transaction receipt
-# >>> tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-
-# >>> greeter = w3.eth.contract(
-# ...     address=tx_receipt.contractAddress,
-# ...     abi=abi
-# ... )
-
-# >>> greeter.functions.greet().call()
-# 'Hello'
-
-# >>> tx_hash = greeter.functions.setGreeting('Nihao').transact()
-# >>> tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-# >>> greeter.functions.greet().call()
-# 'Nihao'
