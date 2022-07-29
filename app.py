@@ -174,18 +174,26 @@ with st.sidebar:
     if st.button("Create Event"):
 
         # Setting details
-        with st.form("Enter Details"):
+        with st.form("eventDetails"):
             event_name = st.text_input('Event Name')
             creator = st.text_input('ETH Wallet Address')
             time_end = st.text_input("Event Length (sec)")
             _stake = st.text_input("Enter stake")
             
             submitted = st.form_submit_button('Create')
-            if submitted:
-                rsvp_instance.RSVP_Create(event_name, time_end, _stake)
+if submitted:
+    st.write(rsvp_instance.RSVP_Create(event_name, time_end, _stake))
+
+    
+eventFilter = contract.events.Appraisal.createFilter(
+    fromBlock=0,
+    argument_filters={"tokenId": token_id}
+)
+event = filter.get_all_entries()
+for appraisal in appraisals:
+    print(dict(appraisal))
+# if st.button("RSVP for an Event"):
         
-        if submitted:
-            st.write("Event Created")
 #transaction_hash = send_transaction(w3, creator, art_address)#
 # ADD NFT FUNCT
 # st.text("NFT Transferred to your address")
