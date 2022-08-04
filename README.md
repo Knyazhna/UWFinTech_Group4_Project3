@@ -53,7 +53,11 @@ https://user-images.githubusercontent.com/97809855/181617159-2313cc74-18b3-448c-
 
 
 # CITATION
+
 ## Nft721ME.sol
+    
+    Nakglom , Saravut (2022 , February 6 ) Github. solidity-avalanche-RSVP-staking-event/contracts/CreatorERC721.sol 
+    https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/ec4c5ed57fc6edff239395e8b7dfa2b387e1bd82/contracts/CreatorERC721.sol
 
 
 
