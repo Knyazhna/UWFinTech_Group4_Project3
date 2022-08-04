@@ -41,5 +41,5 @@ contract Nft721 is ERC721, Ownable {
 }
 
 
-  // CITATION : Nakglom , Saravut (2022 , February 6 ) Github. solidity-avalanche-RSVP-staking-event/contracts/CreatorERC721.sol 
- //             https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/ec4c5ed57fc6edff239395e8b7dfa2b387e1bd82/contracts/CreatorERC721.sol
+// CITATION : Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/CreatorERC721.sol 
+//             https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/ec4c5ed57fc6edff239395e8b7dfa2b387e1bd82/contracts/CreatorERC721.sol

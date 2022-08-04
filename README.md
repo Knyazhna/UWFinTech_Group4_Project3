@@ -16,6 +16,15 @@ Inconsistent event attendance promises in a post-COVID era, creating volatility 
 ### Solution
 A Solidity, smart contract supported, event planning platform in which guests RSVP and pay a small amount to a decentralized fund. The inidividuals who RSVP but fail to check in, lose their staked ETH; those who do attend, get their money back and a share of the reward.
 
+### Project Goal
+Our goal is to learn Solidtiy by taking an in-depth understanding of various Solidty contracts. We followed instructions of online tutorial and public code repository 
+to integrate Solidity contracts complie and deployed with Ganache, Metamask and Javascript to provide a front-end experience.
+
+Developed index.html as a webpage to host information. Created index.css to provide styling for webpage. Scripted index.js to allow interaction for the management of Solidity contracts.
+
+Created deploy.py to deploy contracts, to load account, and to sources files. 
+ 
+Established server.py to handle rest call that connects directly to our deployer.py and can execute the actions directly, while having the functionality of an actual webpage environment.
 
 ## Technologies
 * Python 
@@ -29,11 +38,11 @@ A Solidity, smart contract supported, event planning platform in which guests RS
 
 ## Outline
 ### High-Level: NFT Staking System
-1.  An ERC721 will be the NFT (RSVP) token, used to identify owner.
+1.  An ERC721 will be the NFT token [1], used to identify owner.
 2.  An ERC20 token will be the reward token.
-3.	The eventsafe contract will add extra security and keep track of tokens created.
-4.  The staking contract will hold the staked nft and will allow claiming the rewards.
-5.	The reward RSVP contract will be where the front end pulls from for admins
+3.	The eventsafe contract [2] will add extra security and keep track of tokens created.
+4.  The staking contract[4] will hold the staked nft and will allow claiming the rewards.
+5.	The reward, RSVPEvent contract [3] will be where the front end pulls from for admins
 
 ## Installation Instructions
 To test on remix you need to compile and deploy the nft, reward token, and event owner address and input those parameters to create an RSVP event.  From there input whatever other variables needed for the function you want to accomplish.
@@ -52,16 +61,35 @@ https://user-images.githubusercontent.com/97809855/181617159-2313cc74-18b3-448c-
 
 
 
-# CITATION
 
-## Nft721ME.sol
+
+
+
+
+## Reference
+Acknowledge to the source of the original code for below four solidity contracts files.
+
+## CITATION
     
-    Nakglom , Saravut (2022 , February 6 ) Github. solidity-avalanche-RSVP-staking-event/contracts/CreatorERC721.sol 
+### 1 - Nft721ME.sol
+    
+    Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/CreatorERC721.sol 
     https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/ec4c5ed57fc6edff239395e8b7dfa2b387e1bd82/contracts/CreatorERC721.sol
 
+### 2 - eventSafeME.sol
+    
+    Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/EventSafe.sol 
+    https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/EventSafe.sol
 
+### 3 - rsvpEventME.sol
+    
+    Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/RSVP_Event.sol 
+    https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/RSVP_Event.sol
 
-
+### 4 - stakingME.sol
+    
+    Nakglom,Saravut (2022 , February 7) Github. solidity-avalanche-RSVP-staking-event/contracts/Staking.sol 
+    https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/Staking.solS
 
 ## Contributors
 | Name | GitHub | Linkedin | Email |

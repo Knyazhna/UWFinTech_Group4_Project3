@@ -134,3 +134,5 @@ contract RSVP_Event is Staking,EventSafe {
         }
     }
 }
+// CITATION : Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/RSVP_Event.sol
+//            https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/RSVP_Event.sol

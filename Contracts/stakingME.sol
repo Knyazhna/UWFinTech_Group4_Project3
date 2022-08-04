@@ -239,3 +239,6 @@ abstract contract Staking {
     event LogReward(uint256 reward,address depositor, string description);
     event LogEventEnd(uint256 unclaimed_reward, string description);
 }
+
+// CITATION : Nakglom,Saravut (2022 , February 7) Github. solidity-avalanche-RSVP-staking-event/contracts/Staking.sol
+//            https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/Staking.sol

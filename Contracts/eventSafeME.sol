@@ -33,3 +33,6 @@ contract EventSafe {
     //Event
     event LogCollateral(string description,address creator);
 }
+
+// CITATION : Nakglom,Saravut (2022 , February 6) Github. solidity-avalanche-RSVP-staking-event/contracts/EventSafe.sol
+//            https://github.com/SRVng/solidity-avalanche-RSVP-staking-event/blob/main/contracts/EventSafe.sol
