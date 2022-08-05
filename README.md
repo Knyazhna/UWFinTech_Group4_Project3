@@ -53,6 +53,11 @@ Concerts, casinos, digital assets; any venue that could benefit from a secure in
 ## Future Potential (& WIP)
 Currently this has very exciting future potentials, especially in the post-Covid landscape.  There's a lot that can be added to this such as hosting it on a server that connects directly to our deployer.py and can execute the actions directly, while having the functionality of an actual webpage environment.  The folder "HTML server WIP" has a lot of the HTML that we worked on, but unfortunately ran into issues integrating with solcx.  This is the part that I believe warrants revisiting this project at a later date.
 
+### Running the webpage WIP
+First, make sure deployer2_web.py (similar to our original deployer.py but more customized towards the html rather than streamlit code) and server.py are in the same folder. Run through terminal server.py and it will connect to the webpage. 
+### ISSUES
+Currently solcx is not functioning properly and does not return the interfaceList that needs to connect the functions in the smart contracts to the server python file.  With more time and HTML knowledge I believe this problem can easily be rectified for a functioning webpage that connects to the functionality of the smart contracts.
+
 ## App Video
 
 
