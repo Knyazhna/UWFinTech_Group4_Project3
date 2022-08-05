@@ -1,0 +1,88 @@
+* {
+    font-family: 'Roboto Condensed';
+    background-color: white;
+    overflow: hidden;
+    color: #4e4e4e;
+}
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: #008CBA;
+}
+
+h1 {
+    margin: 16px auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.auto-margin {
+    margin: auto;
+}
+
+.horizontal-line {
+    height: 2px;
+    width: 100%;
+    background-color: #4e4e4e;
+}
+
+.menu {
+    /* padding: 16px; */
+    margin: auto;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.menu_wrapper {
+    padding: 32px;
+}
+
+.menu_main {
+    padding-left: 32px;
+}
+
+.menu_side {
+    padding: 0 8px;
+}
+
+button {
+    outline: none !important;
+    border: none !important;
+    background: #F6F7F9;
+    color: #748194;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: 4px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+}
+
+.button_primary {
+    padding: 8px 16px;
+    background-color: #008CBA;
+    color: white;
+}
+
+.button_side {
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
+}
+
+img {
+    padding: 32px;
+}
