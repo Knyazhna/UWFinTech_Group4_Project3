@@ -1,4 +1,5 @@
 # Imports
+# must have solcx and web3 installed 
 from importlib_metadata import version
 from web3 import Web3
 from solcx import compile_source
@@ -14,8 +15,11 @@ from web3 import EthereumTesterProvider
 # Load .env for URI & Contract Address
 load_dotenv()
 
+# attempt at solcx version solution 
 # solcx.install_solc(version='0.8.9')
 # solcx.set_solc_version('0.8.9')
+
+# page visualization 
 """
 Establishing W3
 Load accounts
@@ -29,11 +33,8 @@ Load accounts
 """
 
 # TODO:
-# Add aacounts
-# Add main
-# Maybe seperate
-# Add buttons
-# Need to set parameters for a few 
+# Find source of compiling error, some issue with solcx
+# interfaceList needed to connect to server.py 
 
 
 # Solidity source code 
@@ -46,7 +47,7 @@ def compile_source_file(contract):
     source = "contract Foo {function bar() public {return; }}"
     return compile_source(source)
     
-    #      output_values=['abi', 'bin']
+    # output_values=['abi', 'bin']
 
 
 # Adding function to deploy the compiled Solidity files
@@ -64,9 +65,6 @@ w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER_URI")))
 
 
 # Adding contract list to generate filepaths
-# contractList = ['eventSafeME', 'Nft721ME', 'rewardTokenME', 'rsvpEventME', 'stakingME']
-# abiList = ['safeAbi', 'nft721Abi', 'rewardAbi','rsvpAbi']
-
 def deploy():
     # Initializing list
     contractList = ['eventSafeME', 'Nft721ME', 'rewardTokenME', 'rsvpEventME', 'stakingME']
@@ -109,41 +107,4 @@ def deploy():
 
 
 
-# def fetch_abi():
-
-#     contractList = [EVT_Token, CreatorERC721, RSVP_Event]
-#     contractAbiList = ['tokenAbi', 'nftAbi', 'rsvpAbi']
-
-#     for i in range(len(contractList)):
-#         struct = {
-#             "CONTRACT_ADDRESS": str(contractList[i][-1]),
-#             "CONTRACT_ABI": contractList[i][-1].abi
-#         }
-
-#         with open(('./app/src/abi/' + contractAbiList[i] + '.json'), 'w', encoding='utf-8') as f:
-#             json.dump(struct, f, indent=3)
-
-
-# # set pre-funded account as sender
-# >>> w3.eth.default_account = w3.eth.accounts[0]
-
-# >>> Greeter = w3.eth.contract(abi=abi, bytecode=bytecode)
-
-# # Submit the transaction that deploys the contract
-# >>> tx_hash = Greeter.constructor().transact()
-
-# # Wait for the transaction to be mined, and get the transaction receipt
-# >>> tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-
-# >>> greeter = w3.eth.contract(
-# ...     address=tx_receipt.contractAddress,
-# ...     abi=abi
-# ... )
-
-# >>> greeter.functions.greet().call()
-# 'Hello'
-
-# >>> tx_hash = greeter.functions.setGreeting('Nihao').transact()
-# >>> tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
-# >>> greeter.functions.greet().call()
-# 'Nihao'
+# Once interfaceList is gathered, connect them to appropriate actions in server.py where params still need to be set
